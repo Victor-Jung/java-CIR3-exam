@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <BarChart fx:id="hist" layoutX="918.0" layoutY="35.0" prefHeight="321.0" prefWidth="404.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+          <LineChart fx:id="tempChart" layoutX="109.0" layoutY="35.0" prefHeight="333.0" prefWidth="640.0" createSymbols="false" legendVisible="false"  visible="true">
+          <xAxis>
+            <NumberAxis autoRanging="false" lowerBound="1880" side="BOTTOM" tickUnit="1" upperBound="2016" />
+          </xAxis>
+          <yAxis>
+            <NumberAxis autoRanging="true" lowerBound="-10" side="LEFT" tickUnit="1" upperBound="10" />
+          </yAxis>
+        </LineChart>
+        <LineChart fx:id="sizeChart" createSymbols="false" legendVisible="false" layoutX="109.0" layoutY="386.0" prefHeight="307.0" prefWidth="640.0" visible="true">
+          <xAxis>
+            <NumberAxis autoRanging="false" lowerBound="1945" side="BOTTOM" tickUnit="1" upperBound="2014" />
+          </xAxis>
+          <yAxis>
+            <NumberAxis autoRanging="true" lowerBound="-10" side="LEFT" tickUnit="1" upperBound="10" />
+          </yAxis>
+        </LineChart>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
